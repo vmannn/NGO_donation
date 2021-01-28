@@ -24,6 +24,30 @@ public class Event {
 	public Event(String eventName) {
 		this.eventName = eventName;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getEventName() {
+		return eventName;
+	}
+
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
+	}
+
+	public List<UserEvent> getUserEvents() {
+		return userEvents;
+	}
+
+	public void setUserEvents(List<UserEvent> userEvents) {
+		this.userEvents = userEvents;
+	}
 	
 	
 	
