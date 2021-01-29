@@ -53,6 +53,14 @@ public class User {
 		this.urbanization = urbanization;
 		this.admin = admin;
 	}
+
+	@Override
+	public String toString() {
+		return "User [firstName=" + firstName + ", lastName=" + lastName + ", cmaNumber=" + cmaNumber + ", phoneNumber="
+				+ phoneNumber + ", email=" + email + ", password=" + password + ", address1=" + address1 + ", address2="
+				+ address2 + ", city=" + city + ", state=" + state + ", zip=" + zip + ", country=" + country
+				+ ", urbanization=" + urbanization + ", admin=" + admin + "]";
+	}
 	
 	
 	
