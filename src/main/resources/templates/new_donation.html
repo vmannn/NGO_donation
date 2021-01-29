@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Donate</title>
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link th:href="@{dashboard.css}" rel="stylesheet">
+  </head>
+  
+  <body>
+  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">NGO Donations</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <h3 class="w-100"> User Name (USER) </h3>
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Donation Information</h1>
+      </div>
+
+      <form class="form-floating mb-3" action="#" th:action="@{/checkout}" th:object="${dono}" method="post">
+
+		<div class="mb-3">
+			<label for="fnameInput">First Name</label>
+			<input type="text" th:field="*{user.firstName}" class="form-control" id="fnameInput" placeholder="first name" th:value="${dono.user.firstName}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="lnameInput">Last Name</label>
+			<input type="text" th:field="*{user.lastName}" class="form-control" id="lnameInput" placeholder="last name" th:value="${dono.user.lastName}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="cmaNumInput">CMA Number</label>
+			<input type="number" th:field="*{user.cmaNumber}" class="form-control" id="cmaNumInput" placeholder="CMA Number" th:value="${dono.user.cmaNumber}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="phoneInput">Phone Number</label>
+			<input type="text" th:field="*{user.phoneNumber}" class="form-control" id="phoneInput" placeholder="Phone Number" th:value="${dono.user.phoneNumber}">
+		</div>
+			
+		<div class="mb-3">
+			<label for="emailInput">Email</label>
+			<input type="email" th:field="*{user.email}" class="form-control" id="emailInput" placeholder="email" th:value="${dono.user.email}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="addr1Input">Address 1</label>
+			<input type="text" th:field="*{user.address1}" class="form-control" id="addr1Input" placeholder="Address 1" th:value="${dono.user.address1}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="addr2Input">Address 1</label>
+			<input type="text" th:field="*{user.address2}" class="form-control" id="addr2Input" placeholder="Address 2" th:value="${dono.user.address2}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="cityInput">City</label>
+			<input type="text" th:field="*{user.city}" class="form-control" id="cityInput" placeholder="City" th:value="${dono.user.city}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="stateInput">State</label>
+			<input type="text" th:field="*{user.state}" class="form-control" id="stateInput" placeholder="State" th:value="${dono.user.state}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="zipInput">Zip Code</label>
+			<input type="number" th:field="*{user.zip}" class="form-control" id="zipInput" placeholder="Zip Code" th:value="${dono.user.zip}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="countryInput">Country</label>
+			<input type="text" th:field="*{user.country}" class="form-control" id="countryInput" placeholder="Country" th:value="${dono.user.country}">
+		</div>
+		
+		<div class="mb-3">
+			<label for="urbInput">Urbanization</label>
+			<input type="text" th:field="*{user.urbanization}" class="form-control" id="urbInput" placeholder="Urbanization" th:value="${dono.user.urbanization}">
+		</div>
+		
+		<div class="mb-3">
+			<br>
+			<label for="eventName">Fundraising Event</label>
+			<input type="text" th:field="*{event.eventName}" class="form-control" th:value="${dono.event.eventName}" id="eventName" readonly>
+			<br>
+			<label for="amountInput">Amount</label>
+			<div class="row">
+				<input type="number" th:field="*{donationAmount}" class="form-control" id="amountInput" placeholder="Amount">
+				<input type="checkbox" th:field="*{monthly}" class="form-check-input" value="" id="flexCheckDefault">
+				<label for="flexCheckDefault" class="form-check-label">Monthly Donation</label>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-dark">Checkout</button>
+	</form>
+    </main>
+  </div>
+</div>
+
+<!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  </body>
+  
+  
+  </html>
