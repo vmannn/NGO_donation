@@ -24,4 +24,46 @@ public class UserEvent {
 	
 	public UserEvent() {}
 
+	public int getUserEventId() {
+		return userEventId;
+	}
+
+	public void setUserEventId(int userEventId) {
+		this.userEventId = userEventId;
+	}
+
+	public double getDonationAmount() {
+		return donationAmount;
+	}
+
+	public void setDonationAmount(double donationAmount) {
+		this.donationAmount = donationAmount;
+	}
+
+	public boolean isMonthly() {
+		return monthly;
+	}
+
+	public void setMonthly(boolean monthly) {
+		this.monthly = monthly;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Event getEvent() {
+		return event;
+	}
+
+	public void setEvent(Event event) {
+		this.event = event;
+	}
+
+	
+	
 }
