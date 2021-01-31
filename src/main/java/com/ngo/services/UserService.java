@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ngo.entities.Event;
 import com.ngo.entities.User;
 import com.ngo.repos.UserRepo;
 
@@ -61,4 +62,7 @@ public class UserService {
 		return userRepo.findAll().size();
 		
 	}
+	
+	@Transactional
+	public void addEvent(User user, Event event)
 }
