@@ -33,5 +33,14 @@ public class UserEventService {
 	}
 	
 	
+	//get user event by id
+	public UserEvent getUserEvent(int id) {
+		return userEventRepo.getUserEventFromId(id);
+	}
+	
+	//delete user event
+	public void deleteUserEvent(UserEvent event) {
+		userEventRepo.delete(event);
+	}
 	
 }

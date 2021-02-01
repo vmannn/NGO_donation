@@ -79,7 +79,7 @@
           	<tr th:each="event:${events}">
           	<td th:text="${event.id}"> Event Id </td>
           	<td th:text="${event.eventName}"> Event Name </td>
-          	<td><a th:href="@{/new_donation/{id}(id=${event.id})}" th:object="${user}">Donate</a>
+          	<td><a th:href="@{/new_donation/{id}-{uid}(id = ${event.id}, uid=${user.id})}" >Donate</a>
           </tbody>
         </table>
       </div>

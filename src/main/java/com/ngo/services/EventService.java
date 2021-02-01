@@ -18,9 +18,8 @@ public class EventService {
 
 	//Function to add/update event
     @Transactional
-	public int addEvent(String eventName) {
+	public int addEvent(Event event) {
 		
-		Event event = new Event(eventName);
 		eventRepo.save(event);
 		
 		//used for testing 
@@ -39,9 +38,9 @@ public class EventService {
    
     //get event by id
     @Transactional
-    public Optional<Event> getEventById(int id) {
+    public Event getEventById(int id) {
     	
-    	return eventRepo.findById(id);	
+    	return eventRepo.getEventFromId(id);	
     }
     
     //deletes an event

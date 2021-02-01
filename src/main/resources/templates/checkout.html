@@ -72,10 +72,10 @@
       
       	<div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
-            <a th:href="@{/add_dono}" th:object="${dono}">
+            <a th:href="@{/add_dono/{id}(id=${dono.user.id})}" th:object="${dono}">
             	<button type="button" class="btn btn-sm btn-outline-secondary">Confirm Donation</button>
             </a>
-            <a th:href="@{/donate}" th:object="${user}">
+            <a th:href="@{/cancel_dono/{id}/{uid}(id=${dono.userEventId}, uid=${dono.user.id})}" th:object="${user}">
             	<button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
             </a>
           </div>

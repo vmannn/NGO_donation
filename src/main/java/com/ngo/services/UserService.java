@@ -74,9 +74,9 @@ public class UserService {
 	
 	//function retrieves user by id
 	@Transactional
-	public Optional<User> getUserFromId(int id) {
+	public User getUserFromId(int id) {
 		
-		return userRepo.findById(id);
+		return userRepo.getUserFromId(id);
 		
 	}
 	
