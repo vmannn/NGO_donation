@@ -1,6 +1,7 @@
 package com.ngo.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class EventService {
 	@Autowired
 	EventRepo eventRepo;
 
-	//Function to add an event
+	//Function to add/update event
     @Transactional
 	public int addEvent(String eventName) {
 		
@@ -27,11 +28,29 @@ public class EventService {
 		
 	}
     
+    
+    //function to return events
     @Transactional
     public ArrayList<Event> returnEvents(){
     	
     	return (ArrayList<Event>) eventRepo.findAll();
     	
     }
+   
+    //get event by id
+    @Transactional
+    public Optional<Event> getEventById(int id) {
+    	
+    	return eventRepo.findById(id);	
+    }
+    
+    //deletes an event
+    @Transactional
+    public void deleteEvent(Event event) {
+    	
+    	eventRepo.delete(event);
+    	
+    }
+    
 	
 }

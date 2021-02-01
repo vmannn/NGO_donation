@@ -54,14 +54,15 @@ public class User {
 		this.admin = admin;
 	}
 
-<<<<<<< HEAD
+
 	@Override
 	public String toString() {
 		return "User [firstName=" + firstName + ", lastName=" + lastName + ", cmaNumber=" + cmaNumber + ", phoneNumber="
 				+ phoneNumber + ", email=" + email + ", password=" + password + ", address1=" + address1 + ", address2="
 				+ address2 + ", city=" + city + ", state=" + state + ", zip=" + zip + ", country=" + country
 				+ ", urbanization=" + urbanization + ", admin=" + admin + "]";
-=======
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -188,7 +189,7 @@ public class User {
 
 	public void setUserEvents(List<UserEvent> userEvents) {
 		this.userEvents = userEvents;
->>>>>>> NGO_donation/develop
+
 	}
 	
 	

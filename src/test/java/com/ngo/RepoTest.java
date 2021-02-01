@@ -71,5 +71,20 @@ public class RepoTest {
 		
 	}
 	
+	
+	@Test
+	void getUserFromEmailTest(){
+		
+		User user = new User("Jerry", "Perkings", 32323322, "5039229251", "JPerk@gmail.com", "thisismypassword",
+				"4343 derry rd", "2353 hallway ave", "Vancouver", "Washington", 95433, "United States", "super urban",
+				false);
+		
+		userRepo.save(user);
+		
+		User userRetrieved = userRepo.getUserFromEmail("JPerk@gmail.com");
+		
+		System.out.println(userRetrieved);
+		
+	}
 		
 }

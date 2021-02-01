@@ -1,6 +1,7 @@
 package com.ngo.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -63,6 +64,21 @@ public class UserService {
 		
 	}
 	
+	//function get user object from a users email
 	@Transactional
-	public void addEvent(User user, Event event)
+	public User getUserFromEmail(String email) {
+		
+		return userRepo.getUserFromEmail(email);
+		
+	}
+	
+	//function retrieves user by id
+	@Transactional
+	public Optional<User> getUserFromId(int id) {
+		
+		return userRepo.findById(id);
+		
+	}
+	
+	
 }
