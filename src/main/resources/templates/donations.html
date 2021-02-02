@@ -40,7 +40,7 @@
   <h3 class="w-100"> User Name (ADMIN) </h3>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
+      <a class="nav-link" th:href="@{/}">Sign out</a>
     </li>
   </ul>
 </header>
@@ -86,7 +86,7 @@
           <thead>
             <tr>
               <th>Donor Name</th>
-              <th>Date</th>
+          <!--<th>Date</th>-->
               <th>Amount</th>
               <th>Event/Donation Type</th>
               <th>Monthly Donation</th>
@@ -94,9 +94,10 @@
           </thead>
           <tbody>
           	<tr th:each="dono:${donos}">
-          	<td th:text="${dono.user.firstName} ${dono.user.lastName}"> Donor Name </td>
-          	<td th:text="${dono.date}"> Date </td>
-          	<td th:text="${dono.amount}"> Amount </td>
+          	 
+          	<td th:text="${dono.user.firstName} + ' ' + ${dono.user.lastName}"> Donor Name </td>
+          <!-- 	<td th:text="${dono.date}"> Date </td> -->
+          	<td th:text="${dono.donationAmount}"> Amount </td>
           	<td th:text="${dono.event.eventName}"> Event Name </td>
           	<td th:text="${dono.monthly} ? 'Yes' : 'No'"> Monthly </td>
           </tbody>

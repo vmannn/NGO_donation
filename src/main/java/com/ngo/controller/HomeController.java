@@ -57,6 +57,7 @@ public class HomeController {
 		
 		if(user == null) {
 			RedirectView redirView = new RedirectView();
+			redirView.setContextRelative(true);
 			redirView.setUrl("/");
 			return redirView;
 		}
@@ -79,6 +80,7 @@ public class HomeController {
 			//correct login information
 			//model.addAttribute("user", user);
 			RedirectView redirView = new RedirectView();
+			redirView.setContextRelative(true);
 			redirectAttrs.addFlashAttribute("user", user);
 			if(user.isAdmin()) {
 				//admin user
@@ -344,6 +346,7 @@ public class HomeController {
 		redirectAttrs.addFlashAttribute("user", user);
 		
 		//set to return to donation page
+		redirView.setContextRelative(true);
 		redirView.setUrl("/donate");
 		
 		//return to donate page
@@ -364,6 +367,7 @@ public class HomeController {
 		redirectAttrs.addFlashAttribute("user", user);
 		
 		//set to return to donation page
+		redirView.setContextRelative(true);
 		redirView.setUrl("/donate");
 		
 		//return to donate page

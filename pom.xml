@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>NGO-Donation</artifactId>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>NGO-Donation</name>
 	<description>Demo project for Spring Boot</description>
@@ -51,6 +52,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>ngo</finalName>
 	</build>
 
 </project>

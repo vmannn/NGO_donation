@@ -22,7 +22,7 @@ public class RepoTest {
 	UserRepo userRepo;
 	@Autowired
 	EventRepo eventRepo;
-	
+	/*
 	@Test
 	void addUser() {
 		
@@ -86,5 +86,5 @@ public class RepoTest {
 		System.out.println(userRetrieved);
 		
 	}
-		
+		*/
 }
